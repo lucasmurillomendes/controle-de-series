@@ -5,7 +5,7 @@
 @endsection
 
 @section('conteudo')
-    <a href="/series" class="btn btn-danger">Voltar</a>    
+    <a href="{{route('serie.listar')}}" class="btn btn-danger">Voltar</a>    
     <hr>
     <form action="" method="post">
         @csrf

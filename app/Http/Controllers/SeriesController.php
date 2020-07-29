@@ -6,7 +6,7 @@ use App\Serie;
 
 class SeriesController extends Controller
 {
-    public function listarSeries(Request $request)
+    public function index(Request $request)
     {
        $series = Serie::query()->orderBy('nome')->get();
 
@@ -27,12 +27,12 @@ class SeriesController extends Controller
 
         $request->session()->flash('mensagem',"Registro {$serie->id} salvo com sucesso: {$serie->nome}");
 
-        return redirect('/series');
+        return redirect()->route('serie.listar');
     }
 
     public function destroy(Request $request){
         Serie::destroy($request->id);
         $request->session()->flash('mensagem', "Série excluída com sucesso.");
-        return redirect('/series');
+        return redirect()->route('serie.listar');
     }
 }

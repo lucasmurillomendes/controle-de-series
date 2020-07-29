@@ -17,11 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/series', 'SeriesController@listarSeries');
+Route::get('/series', 'SeriesController@index')->name('serie.listar');
 
-Route::get('/series/criar', 'SeriesController@create');
+Route::get('/series/criar', 'SeriesController@create')->name('serie.criar');
 Route::post('/series/criar', 'SeriesController@store');
-Route::post('/series/remover/{id}', 'SeriesController@destroy');
+Route::post('/series/remover/{id}', 'SeriesController@destroy')->name('serie.remover');
 
 Route::get('/categoria', 'CategoriaController@listarCategoria');
 
