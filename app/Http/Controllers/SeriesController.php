@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Serie;
-
+//use App\Http\Requests\SeriesFormRequest;
 class SeriesController extends Controller
 {
     public function index(Request $request)
@@ -19,7 +19,7 @@ class SeriesController extends Controller
         return view('series.create');
     }
 
-    public function store(Request $request)
+    public function store(SeriesFormRequest $request)
     {
         $nome = $request->nome;
         
